@@ -3,9 +3,9 @@ const validation = store => next => action => {
   if (playlistValidation) {
     try {
       const playlist = action.payload;
-      const notValid = !playlist.title || !playlist.discription;
+      const notValid = !playlist.title || !playlist.description;
       if (notValid) {
-        throw new Error('VALIDATION ERROR: must include title and discription');
+        throw new Error('VALIDATION ERROR: must include title and description');
       }
 
       return next(action);
