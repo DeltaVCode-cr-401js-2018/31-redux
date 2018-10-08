@@ -1,4 +1,8 @@
 export default (state = [], action = {}) => {
+  if (action.error) {
+    return state;
+  }
+
   switch(action.type) {
     case 'PLAYLIST_CREATE':
       return [ ...state, action.payload ];

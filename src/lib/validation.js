@@ -13,6 +13,7 @@ const validation = store => next => action => {
       console.error(err);
 
       return next({
+        // TODO: should this dispatch a different action type, e.g. VALIDATION_ERROR?
         type: action.type,
         payload: err,
         error: true,
